@@ -1,0 +1,19 @@
+Jan 18, '22 09:06:50 | ETL_LIS | INFO: Starting Subcategory Data Extraction
+Jan 18, '22 09:06:50 | ETL_LIS | INFO: Attempting Snowflake Database Connection with user raj**** and account rb239**
+Jan 18, '22 09:06:50 | ETL_LIS | INFO: Snowflake Connector for Python Version: 2.7.2, Python Version: 3.8.10, Platform: Linux-5.11.0-43-generic-x86_64-with-glibc2.29
+Jan 18, '22 09:06:50 | ETL_LIS | INFO: This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+Jan 18, '22 09:06:50 | ETL_LIS | INFO: Setting use_openssl_only mode to False
+Jan 18, '22 09:06:52 | ETL_LIS | INFO: Database Connection Successful
+Jan 18, '22 09:06:52 | ETL_LIS | INFO: Created Database Connection Cursor
+Jan 18, '22 09:06:52 | ETL_LIS | INFO: query: [USE BHATBHATENI.TRANSACTIONS]
+Jan 18, '22 09:06:52 | ETL_LIS | INFO: query execution done
+Jan 18, '22 09:06:52 | ETL_LIS | INFO: Cursor Execution - Used Transactions Schema of Bhatbhateni Database
+Jan 18, '22 09:06:52 | ETL_LIS | INFO: query: [SELECT * FROM SUBCATEGORY]
+Jan 18, '22 09:06:53 | ETL_LIS | INFO: query execution done
+Jan 18, '22 09:06:53 | ETL_LIS | INFO: Cursor Execution - Fetched all Subcategory Data
+Jan 18, '22 09:06:53 | ETL_LIS | INFO: Converted fetched Subcategory data to Pandas Dataframe
+Jan 18, '22 09:06:53 | ETL_LIS | INFO: Converted Dataframe to csv, and saved to 'd_subcategory_data.csv' file
+Jan 18, '22 09:06:53 | ETL_LIS | INFO: closed
+Jan 18, '22 09:06:53 | ETL_LIS | INFO: No async queries seem to be running, deleting session
+Jan 18, '22 09:06:53 | ETL_LIS | INFO: Closed Database Connection Cursor
+Jan 18, '22 09:06:53 | ETL_LIS | INFO: Closed Database Connection

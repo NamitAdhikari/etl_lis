@@ -1,43 +1,26 @@
 import snowflake.connector
+import logging
 
 
 def db_connection_open():
 
+    logging.info("Attempting Snowflake Database Connection with user raj**** and account rb239**")
     conn = snowflake.connector.connect (
         user='rajesht',
         password='LisNepal@2022',
         account='rb23930.southeast-asia.azure'
     )
+    logging.info("Database Connection Successful")
 
     cur = conn.cursor()
+    logging.info("Created Database Connection Cursor")
 
     return conn, cur
 
-# try:
-#     cur.execute("USE BHATBHATENI.TRANSACTIONS")
-
-#     # EXTRACTING SALES DATA
-#     cur.execute("SELECT * FROM SALES")
-  
-#     sales_df = cur.fetch_pandas_all()
-#     sales_df.to_csv('sales_data.csv', index=False)
-
-#     print(sales_df)
-
-#     cur.execute('''
-#         SELECT STORE.ID AS STORE_ID, COUNTRY_DESC, REGION_DESC, STORE_DESC FROM STORE
-#         JOIN REGION ON STORE.REGION_ID = REGION.ID
-#         JOIN COUNTRY ON REGION.COUNTRY_ID = COUNTRY.ID;
-#     ''')
-
-#     location_df = cur.fetch_pandas_all()
-#     location_df.to_csv('location_data.csv', index=False)
-
-#     print(location_df)
-
-# finally:
 
 def db_connection_close(cur, conn):
     cur.close()
+    logging.info("Closed Database Connection Cursor")
     conn.close()
+    logging.info("Closed Database Connection")
 
