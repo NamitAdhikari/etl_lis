@@ -1,5 +1,7 @@
 from datetime import datetime
 from pathlib import Path
+
+import numpy as np
 BASE_DIR = Path(__file__).resolve().parents[1]
 
 import sys
@@ -36,8 +38,11 @@ try:
     (CUSTOMER_ID, CUSTOMER_FIRST_NAME, CUSTOMER_LAST_NAME, CUSTOMER_MIDDLE_NAME, CUSTOMER_ADDRESS, INSERT_TIME, UPDATE_TIME, ACTIVE_FLAG, START_DATE, END_DATE)
     VALUES '''
     for row in customer_df.itertuples():
-        query += f"({row.ID}, '{row.CUSTOMER_FIRST_NAME}', '{row.CUSTOMER_LAST_NAME}', '{row.CUSTOMER_MIDDLE_NAME}', '{row.CUSTOMER_ADDRESS}', "\
-            f"'{datetime.now()}', '{datetime.now()}', 1, '{datetime.now()}', NULL),"
+        query += f'''({row.ID}, {("'"+row.CUSTOMER_FIRST_NAME+"'") if row.CUSTOMER_FIRST_NAME else 'NULL'}, 
+            {("'"+row.CUSTOMER_LAST_NAME+"'") if row.CUSTOMER_LAST_NAME else 'NULL'}, 
+            {("'"+row.CUSTOMER_MIDDLE_NAME+"'") if row.CUSTOMER_MIDDLE_NAME else 'NULL'}, 
+            {("'"+row.CUSTOMER_ADDRESS+"'") if row.CUSTOMER_ADDRESS else 'NULL'}, 
+            '{datetime.now()}', '{datetime.now()}', 1, '{datetime.now()}', NULL),'''
 
     query = query.rstrip(",") + ";"
     logging.info("Generated Batch Insert Query by iterating over DataFrame")

@@ -36,7 +36,7 @@ try:
     (PRODUCT_ID, SUBCATEGORY_ID, PRODUCT_DESC, INSERT_TIME, UPDATE_TIME, ACTIVE_FLAG, START_DATE, END_DATE)
     VALUES '''
     for row in product_df.itertuples():
-        query += f"({row.ID}, '{row.SUBCATEGORY_ID}', '{row.PRODUCT_DESC}', "\
+        query += f"({row.ID}, {row.SUBCATEGORY_ID}, '{row.PRODUCT_DESC}', "\
             f"'{datetime.now()}', '{datetime.now()}', 1, '{datetime.now()}', NULL),"
 
     query = query.rstrip(",") + ";"

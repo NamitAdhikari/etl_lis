@@ -36,7 +36,7 @@ try:
     (STORE_ID, REGION_ID, STORE_DESC, CURRENT_FLAG, EFFECTIVE_FROM, EFFECTIVE_TO, INSERT_TIME, UPDATE_TIME)
     VALUES '''
     for row in store_df.itertuples():
-        query += f"({row.ID}, '{row.REGION_ID}', '{row.STORE_DESC}', 1,"\
+        query += f"({row.ID}, {row.REGION_ID}, '{row.STORE_DESC}', 1,"\
             f"'{datetime.now()}', NULL, '{datetime.now()}', '{datetime.now()}'),"
 
     query = query.rstrip(",") + ";"

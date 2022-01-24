@@ -1,0 +1,62 @@
+Jan 24, '22 23:04:52 | ETL_LIS | INFO: Loading D_SUBCATEGORY Table
+Jan 24, '22 23:04:52 | ETL_LIS | INFO: Attempting Snowflake Database Connection with user raj**** and account rb239**
+Jan 24, '22 23:04:52 | ETL_LIS | INFO: Snowflake Connector for Python Version: 2.7.2, Python Version: 3.8.10, Platform: Linux-5.11.0-46-generic-x86_64-with-glibc2.29
+Jan 24, '22 23:04:52 | ETL_LIS | INFO: This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+Jan 24, '22 23:04:52 | ETL_LIS | INFO: Setting use_openssl_only mode to False
+Jan 24, '22 23:04:54 | ETL_LIS | INFO: Database Connection Successful
+Jan 24, '22 23:04:54 | ETL_LIS | INFO: Created Database Connection Cursor
+Jan 24, '22 23:04:54 | ETL_LIS | INFO: query: [USE NAMIT_BHATBHATENI.DWH_TMP_BBSM]
+Jan 24, '22 23:04:54 | ETL_LIS | INFO: query execution done
+Jan 24, '22 23:04:54 | ETL_LIS | INFO: Cursor Execution - Used DWH_TMP_BBSM Schema of NAMIT_BHATBHATENI Database to fetch data
+Jan 24, '22 23:04:54 | ETL_LIS | INFO: query: [UPDATE D_SUBCATEGORY_TMP subc SET subc.CATEGORY_ID = cat.CATEGORY_KEY FROM D_CAT...]
+Jan 24, '22 23:04:54 | ETL_LIS | INFO: query execution done
+Jan 24, '22 23:04:54 | ETL_LIS | INFO: Cursor Execution - Changed Subcategory_id business key to point surrogate key as foreign key
+Jan 24, '22 23:04:54 | ETL_LIS | INFO: query: [SELECT * FROM D_SUBCATEGORY_TMP]
+Jan 24, '22 23:04:55 | ETL_LIS | INFO: query execution done
+Jan 24, '22 23:04:55 | ETL_LIS | INFO: Cursor Execution - Fetching all data from D_SUBCATEGORY_TMP Table
+Jan 24, '22 23:04:55 | ETL_LIS | INFO: Converted Fetched Data to Pandas Dataframe
+Jan 24, '22 23:04:55 | ETL_LIS | INFO: query: [USE NAMIT_BHATBHATENI.DWH_TGT_BBSM]
+Jan 24, '22 23:04:55 | ETL_LIS | INFO: query execution done
+Jan 24, '22 23:04:55 | ETL_LIS | INFO: Cursor Execution - Used DWH_TGT_BBSM Schema of NAMIT_BHATBHATENI Database to load data
+Jan 24, '22 23:04:55 | ETL_LIS | INFO: query: [create temporary stage /* Python:snowflake.connector.pandas_tools.write_pandas()...]
+Jan 24, '22 23:04:55 | ETL_LIS | INFO: query execution done
+Jan 24, '22 23:04:55 | ETL_LIS | INFO: query: [PUT /* Python:snowflake.connector.pandas_tools.write_pandas() */ 'file:///tmp/tm...]
+Jan 24, '22 23:04:55 | ETL_LIS | INFO: query execution done
+Jan 24, '22 23:04:57 | ETL_LIS | INFO: query: [COPY INTO "D_SUBCATEGORY" /* Python:snowflake.connector.pandas_tools.write_panda...]
+Jan 24, '22 23:04:58 | ETL_LIS | INFO: query execution done
+Jan 24, '22 23:04:58 | ETL_LIS | INFO: Loaded all Subcategory Data to Target Table 'D_SUBCATEGORY'
+Jan 24, '22 23:04:58 | ETL_LIS | INFO: closed
+Jan 24, '22 23:04:58 | ETL_LIS | INFO: No async queries seem to be running, deleting session
+Jan 24, '22 23:04:58 | ETL_LIS | INFO: Closed Database Connection Cursor
+Jan 24, '22 23:04:58 | ETL_LIS | INFO: Closed Database Connection
+Jan 24, '22 23:14:58 | ETL_LIS | INFO: Loading D_SUBCATEGORY Table
+Jan 24, '22 23:14:58 | ETL_LIS | INFO: Attempting Snowflake Database Connection with user raj**** and account rb239**
+Jan 24, '22 23:14:58 | ETL_LIS | INFO: Snowflake Connector for Python Version: 2.7.2, Python Version: 3.8.10, Platform: Linux-5.11.0-46-generic-x86_64-with-glibc2.29
+Jan 24, '22 23:14:58 | ETL_LIS | INFO: This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+Jan 24, '22 23:14:58 | ETL_LIS | INFO: Setting use_openssl_only mode to False
+Jan 24, '22 23:14:59 | ETL_LIS | INFO: Database Connection Successful
+Jan 24, '22 23:14:59 | ETL_LIS | INFO: Created Database Connection Cursor
+Jan 24, '22 23:14:59 | ETL_LIS | INFO: query: [USE NAMIT_BHATBHATENI.DWH_TMP_BBSM]
+Jan 24, '22 23:15:00 | ETL_LIS | INFO: query execution done
+Jan 24, '22 23:15:00 | ETL_LIS | INFO: Cursor Execution - Used DWH_TMP_BBSM Schema of NAMIT_BHATBHATENI Database to fetch data
+Jan 24, '22 23:15:00 | ETL_LIS | INFO: query: [UPDATE NAMIT_BHATBHATENI.DWH_TMP_BBSM.D_SUBCATEGORY_TMP subc SET subc.CATEGORY_I...]
+Jan 24, '22 23:15:00 | ETL_LIS | INFO: query execution done
+Jan 24, '22 23:15:00 | ETL_LIS | INFO: Cursor Execution - Changed Subcategory_id business key to point surrogate key as foreign key
+Jan 24, '22 23:15:00 | ETL_LIS | INFO: query: [SELECT * FROM D_SUBCATEGORY_TMP]
+Jan 24, '22 23:15:00 | ETL_LIS | INFO: query execution done
+Jan 24, '22 23:15:00 | ETL_LIS | INFO: Cursor Execution - Fetching all data from D_SUBCATEGORY_TMP Table
+Jan 24, '22 23:15:00 | ETL_LIS | INFO: Converted Fetched Data to Pandas Dataframe
+Jan 24, '22 23:15:00 | ETL_LIS | INFO: query: [USE NAMIT_BHATBHATENI.DWH_TGT_BBSM]
+Jan 24, '22 23:15:01 | ETL_LIS | INFO: query execution done
+Jan 24, '22 23:15:01 | ETL_LIS | INFO: Cursor Execution - Used DWH_TGT_BBSM Schema of NAMIT_BHATBHATENI Database to load data
+Jan 24, '22 23:15:01 | ETL_LIS | INFO: query: [create temporary stage /* Python:snowflake.connector.pandas_tools.write_pandas()...]
+Jan 24, '22 23:15:01 | ETL_LIS | INFO: query execution done
+Jan 24, '22 23:15:01 | ETL_LIS | INFO: query: [PUT /* Python:snowflake.connector.pandas_tools.write_pandas() */ 'file:///tmp/tm...]
+Jan 24, '22 23:15:01 | ETL_LIS | INFO: query execution done
+Jan 24, '22 23:15:03 | ETL_LIS | INFO: query: [COPY INTO "D_SUBCATEGORY" /* Python:snowflake.connector.pandas_tools.write_panda...]
+Jan 24, '22 23:15:04 | ETL_LIS | INFO: query execution done
+Jan 24, '22 23:15:04 | ETL_LIS | INFO: Loaded all Subcategory Data to Target Table 'D_SUBCATEGORY'
+Jan 24, '22 23:15:04 | ETL_LIS | INFO: closed
+Jan 24, '22 23:15:04 | ETL_LIS | INFO: No async queries seem to be running, deleting session
+Jan 24, '22 23:15:04 | ETL_LIS | INFO: Closed Database Connection Cursor
+Jan 24, '22 23:15:04 | ETL_LIS | INFO: Closed Database Connection

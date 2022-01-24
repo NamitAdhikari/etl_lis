@@ -36,7 +36,7 @@ try:
     (REGION_ID, COUNTRY_ID, REGION_DESC, INSERT_TIME, UPDATE_TIME)
     VALUES '''
     for row in region_df.itertuples():
-        query += f"({row.ID}, '{row.COUNTRY_ID}', '{row.REGION_DESC}', "\
+        query += f"({row.ID}, {row.COUNTRY_ID}, '{row.REGION_DESC}', "\
             f"'{datetime.now()}', '{datetime.now()}'),"
 
     query = query.rstrip(",") + ";"

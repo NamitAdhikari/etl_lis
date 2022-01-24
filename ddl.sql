@@ -164,3 +164,120 @@ create or replace table f_sales_tmp(
   start_date datetime,
   end_date datetime
 );
+
+
+
+
+
+
+
+
+
+create or replace table d_country(
+  country_key number autoincrement start 1 increment 1,
+  country_id number(38,0),
+  country_desc varchar(200),
+  insert_time datetime,
+  update_time DATETIME,
+  PRIMARY KEY (country_key) 
+);
+  
+create or replace table d_region(
+  region_key number autoincrement start 1 increment 1,
+  region_id number(38,0) ,
+  country_id number,
+  region_desc varchar(200),
+  insert_time datetime,
+  update_time DATETIME,
+  PRIMARY KEY (region_key),
+  FOREIGN KEY (country_id) REFERENCES D_COUNTRY(country_key)
+);
+
+create or replace table d_store(
+  store_key number autoincrement start 1 increment 1,
+  store_id number(38,0),
+  region_id number,
+  store_desc varchar(200),
+  current_flag char(1),
+  effective_from datetime,
+  effective_to datetime,
+  insert_time datetime, 
+  update_time DATETIME,
+  PRIMARY KEY (store_key),
+  FOREIGN KEY (region_id) REFERENCES D_REGION(region_key)
+);
+
+create or replace table d_category(
+  category_key number autoincrement start 1 increment 1,
+  category_id number(38,0),
+  category_desc varchar(1024),
+  insert_time datetime, 
+  update_time datetime,
+  active_flag char(1),
+  start_date datetime,
+  end_date DATETIME,
+  PRIMARY KEY (category_key)
+);
+
+create or replace table d_subcategory(
+  subcategory_key number autoincrement start 1 increment 1,
+  subcategory_id number(38,0),
+  subcategory_desc varchar(256),
+  category_id number,
+  insert_time datetime, 
+  update_time datetime,
+  active_flag char(1),
+  start_date datetime,
+  end_date DATETIME,
+  PRIMARY KEY (subcategory_key),
+  FOREIGN KEY (category_id) REFERENCES D_CATEGORY(category_key)
+);
+
+create or replace table d_product(
+  product_key number autoincrement start 1 increment 1,
+  product_id number(38,0),
+  subcategory_id number(38,0),
+  product_desc varchar(256),
+  insert_time datetime, 
+  update_time datetime,
+  active_flag char(1),
+  start_date datetime,
+  end_date DATETIME,
+  PRIMARY KEY (product_key),
+  FOREIGN KEY (subcategory_id) REFERENCES D_SUBCATEGORY(subcategory_key)
+);
+
+create or replace table d_customer(
+  customer_key number autoincrement start 1 increment 1,
+  customer_id number(38,0),
+  customer_first_name varchar(256),
+  customer_last_name varchar(256),
+  customer_middle_name varchar(256),
+  customer_address varchar(256),
+  insert_time datetime, 
+  update_time datetime,
+  active_flag char(1),
+  start_date datetime,
+  end_date DATETIME,
+  PRIMARY KEY (customer_key)
+);
+
+create or replace table f_sales(
+  sales_key number autoincrement start 1 increment 1,
+  sales_id number(38,0),
+  store_id number,
+  product_id number,
+  customer_id number,
+  transaction_time datetime,
+  quantity number(38,0),
+  amount number(20,2),
+  discount number(20,2),
+  insert_time datetime, 
+  update_time datetime,
+  start_date datetime,
+  end_date DATETIME,
+  PRIMARY KEY (sales_key),
+  FOREIGN KEY (store_id) REFERENCES D_STORE(store_key),
+  FOREIGN KEY (product_id) REFERENCES D_PRODUCT(product_key),
+  FOREIGN KEY (customer_id) REFERENCES D_CUSTOMER(customer_key)
+);
