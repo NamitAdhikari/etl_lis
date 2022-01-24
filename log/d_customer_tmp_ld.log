@@ -1,0 +1,50 @@
+Jan 24, '22 20:10:04 | ETL_LIS | INFO: Loading D_CUSTOMER_TMP Table
+Jan 24, '22 20:10:04 | ETL_LIS | INFO: Attempting Snowflake Database Connection with user raj**** and account rb239**
+Jan 24, '22 20:10:04 | ETL_LIS | INFO: Snowflake Connector for Python Version: 2.7.2, Python Version: 3.8.10, Platform: Linux-5.11.0-46-generic-x86_64-with-glibc2.29
+Jan 24, '22 20:10:04 | ETL_LIS | INFO: This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+Jan 24, '22 20:10:04 | ETL_LIS | INFO: Setting use_openssl_only mode to False
+Jan 24, '22 20:10:11 | ETL_LIS | INFO: Database Connection Successful
+Jan 24, '22 20:10:11 | ETL_LIS | INFO: Created Database Connection Cursor
+Jan 24, '22 20:10:11 | ETL_LIS | INFO: query: [USE NAMIT_BHATBHATENI.DWH_STG_BBSM]
+Jan 24, '22 20:10:11 | ETL_LIS | INFO: query execution done
+Jan 24, '22 20:10:11 | ETL_LIS | INFO: Cursor Execution - Used DWH_STG_BBSM Schema of NAMIT_BHATBHATENI Database to fetch data
+Jan 24, '22 20:10:11 | ETL_LIS | INFO: query: [SELECT * FROM STG_CUSTOMER]
+Jan 24, '22 20:10:14 | ETL_LIS | INFO: query execution done
+Jan 24, '22 20:10:14 | ETL_LIS | INFO: Cursor Execution - Fetching all data from STG_CUSTOMER Table
+Jan 24, '22 20:10:14 | ETL_LIS | INFO: Converted Fetched Data to Pandas Dataframe
+Jan 24, '22 20:10:14 | ETL_LIS | INFO: query: [USE NAMIT_BHATBHATENI.DWH_TMP_BBSM]
+Jan 24, '22 20:10:14 | ETL_LIS | INFO: query execution done
+Jan 24, '22 20:10:14 | ETL_LIS | INFO: Cursor Execution - Used DWH_TMP_BBSM Schema of NAMIT_BHATBHATENI Database to load data
+Jan 24, '22 20:10:14 | ETL_LIS | INFO: Generated Batch Insert Query by iterating over DataFrame
+Jan 24, '22 20:10:14 | ETL_LIS | INFO: query: [INSERT INTO D_CUSTOMER_TMP (CUSTOMER_ID, CUSTOMER_FIRST_NAME, CUSTOMER_LAST_NAME...]
+Jan 24, '22 20:10:16 | ETL_LIS | INFO: query execution done
+Jan 24, '22 20:10:16 | ETL_LIS | INFO: Batch Insertion of Customer Data to D_CUSTOMER_TMP Table
+Jan 24, '22 20:10:16 | ETL_LIS | INFO: closed
+Jan 24, '22 20:10:17 | ETL_LIS | INFO: No async queries seem to be running, deleting session
+Jan 24, '22 20:10:17 | ETL_LIS | INFO: Closed Database Connection Cursor
+Jan 24, '22 20:10:17 | ETL_LIS | INFO: Closed Database Connection
+Jan 24, '22 20:17:12 | ETL_LIS | INFO: Loading D_CUSTOMER_TMP Table
+Jan 24, '22 20:17:12 | ETL_LIS | INFO: Attempting Snowflake Database Connection with user raj**** and account rb239**
+Jan 24, '22 20:17:12 | ETL_LIS | INFO: Snowflake Connector for Python Version: 2.7.2, Python Version: 3.8.10, Platform: Linux-5.11.0-46-generic-x86_64-with-glibc2.29
+Jan 24, '22 20:17:12 | ETL_LIS | INFO: This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+Jan 24, '22 20:17:12 | ETL_LIS | INFO: Setting use_openssl_only mode to False
+Jan 24, '22 20:17:13 | ETL_LIS | INFO: Database Connection Successful
+Jan 24, '22 20:17:13 | ETL_LIS | INFO: Created Database Connection Cursor
+Jan 24, '22 20:17:13 | ETL_LIS | INFO: query: [USE NAMIT_BHATBHATENI.DWH_STG_BBSM]
+Jan 24, '22 20:17:14 | ETL_LIS | INFO: query execution done
+Jan 24, '22 20:17:14 | ETL_LIS | INFO: Cursor Execution - Used DWH_STG_BBSM Schema of NAMIT_BHATBHATENI Database to fetch data
+Jan 24, '22 20:17:14 | ETL_LIS | INFO: query: [SELECT * FROM STG_CUSTOMER]
+Jan 24, '22 20:17:15 | ETL_LIS | INFO: query execution done
+Jan 24, '22 20:17:15 | ETL_LIS | INFO: Cursor Execution - Fetching all data from STG_CUSTOMER Table
+Jan 24, '22 20:17:15 | ETL_LIS | INFO: Converted Fetched Data to Pandas Dataframe
+Jan 24, '22 20:17:15 | ETL_LIS | INFO: query: [USE NAMIT_BHATBHATENI.DWH_TMP_BBSM]
+Jan 24, '22 20:17:15 | ETL_LIS | INFO: query execution done
+Jan 24, '22 20:17:15 | ETL_LIS | INFO: Cursor Execution - Used DWH_TMP_BBSM Schema of NAMIT_BHATBHATENI Database to load data
+Jan 24, '22 20:17:15 | ETL_LIS | INFO: Generated Batch Insert Query by iterating over DataFrame
+Jan 24, '22 20:17:15 | ETL_LIS | INFO: query: [INSERT INTO D_CUSTOMER_TMP (CUSTOMER_ID, CUSTOMER_FIRST_NAME, CUSTOMER_LAST_NAME...]
+Jan 24, '22 20:17:15 | ETL_LIS | INFO: query execution done
+Jan 24, '22 20:17:15 | ETL_LIS | INFO: Batch Insertion of Customer Data to D_CUSTOMER_TMP Table
+Jan 24, '22 20:17:15 | ETL_LIS | INFO: closed
+Jan 24, '22 20:17:16 | ETL_LIS | INFO: No async queries seem to be running, deleting session
+Jan 24, '22 20:17:16 | ETL_LIS | INFO: Closed Database Connection Cursor
+Jan 24, '22 20:17:16 | ETL_LIS | INFO: Closed Database Connection

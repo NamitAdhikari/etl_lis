@@ -73,39 +73,35 @@ discount NUMBER(20,2)
 
 
 create or replace table d_country_tmp(
-  country_key number,
+  country_key number autoincrement start 1 increment 1,
   country_id number(38,0),
   country_desc varchar(200),
   insert_time datetime,
   update_time datetime);
   
 create or replace table d_region_tmp(
-  region_key number,
+  region_key number autoincrement start 1 increment 1,
   region_id number(38,0) ,
-  country_key number,
+  country_id number,
   region_desc varchar(200),
   insert_time datetime,
   update_time datetime
 );
 
 create or replace table d_store_tmp(
-  store_key number,
+  store_key number autoincrement start 1 increment 1,
   store_id number(38,0),
-  region_key number, 
   region_id number,
-  country_key number,
-  country_id number,
   store_desc varchar(200),
   current_flag char(1),
   effective_from datetime,
   effective_to datetime,
   insert_time datetime, 
   update_time datetime
-
 );
 
 create or replace table d_category_tmp(
-  category_key number,
+  category_key number autoincrement start 1 increment 1,
   category_id number(38,0),
   category_desc varchar(1024),
   insert_time datetime, 
@@ -116,10 +112,9 @@ create or replace table d_category_tmp(
 );
 
 create or replace table d_subcategory_tmp(
-  subcategory_key number,
+  subcategory_key number autoincrement start 1 increment 1,
   subcategory_id number(38,0),
   subcategory_desc varchar(256),
-  category_key number,
   category_id number,
   insert_time datetime, 
   update_time datetime,
@@ -128,14 +123,9 @@ create or replace table d_subcategory_tmp(
   end_date datetime
 );
 
-
-
 create or replace table d_product_tmp(
-  product_key number(38,0),
+  product_key number autoincrement start 1 increment 1,
   product_id number(38,0),
-  category_key number,
-  category_id number(38,0),
-  subcategory_key number,
   subcategory_id number(38,0),
   product_desc varchar(256),
   insert_time datetime, 
@@ -143,11 +133,10 @@ create or replace table d_product_tmp(
   active_flag char(1),
   start_date datetime,
   end_date datetime
-  
 );
 
 create or replace table d_customer_tmp(
-  customer_key number,
+  customer_key number autoincrement start 1 increment 1,
   customer_id number(38,0),
   customer_first_name varchar(256),
   customer_last_name varchar(256),
@@ -161,11 +150,11 @@ create or replace table d_customer_tmp(
 );
 
 create or replace table f_sales_tmp(
-  sales_key number,
+  sales_key number autoincrement start 1 increment 1,
   sales_id number(38,0),
-  store_key number,
-  product_key number,
-  customer_key number,
+  store_id number,
+  product_id number,
+  customer_id number,
   transaction_time datetime,
   quantity number(38,0),
   amount number(20,2),
@@ -174,5 +163,4 @@ create or replace table f_sales_tmp(
   update_time datetime,
   start_date datetime,
   end_date datetime
-  
 );
